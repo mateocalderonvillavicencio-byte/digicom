@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://digi-api.com",
+    "secure": true,
+    "changeOrigin": true,
+    "rewrite": {
+      "^/api": "/api/v1"
+    }
+  }
+}

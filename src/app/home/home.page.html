@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Digimon App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" pull-factor="0.5" pull-min="100" pull-max="200" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="search-container">
+    <ion-searchbar
+      placeholder="Buscar Digimon..."
+      [(ngModel)]="searchTerm"
+      (ionChange)="onSearch($event)"
+      animated
+      debounce="300">
+    </ion-searchbar>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-container">
+    <ion-spinner name="crescent" class="spinner-large"></ion-spinner>
+  </div>
+
+  <ion-list *ngIf="!isLoading" class="digimon-list">
+    <ion-item
+      *ngFor="let digimon of filteredDigimons"
+      class="digimon-item"
+      (click)="goToDetail(digimon.id)"
+      lines="none">
+      <ion-thumbnail slot="start" class="digimon-thumbnail">
+        <img [src]="digimon.image?.href" [alt]="digimon.name" />
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2 class="digimon-name">{{ digimon.name }}</h2>
+        <p class="digimon-level">{{ getLevel(digimon) }}</p>
+      </ion-label>
+
+      <ion-icon name="chevron-forward" slot="end" class="chevron-icon"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="!isLoading && filteredDigimons.length === 0" class="empty-container">
+    <ion-icon name="search-outline" class="empty-icon"></ion-icon>
+    <p>No se encontraron Digimon</p>
+  </div>
+</ion-content>

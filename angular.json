@@ -1,0 +1,98 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "defaultCollection": "@ionic/angular-toolkit"
+  },
+  "version": 1,
+  "project": {
+    "build": {
+      "builder": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist",
+        "index": "src/index.html",
+        "main": "src/main.ts",
+        "polyfills": "src/polyfills.ts",
+        "tsConfig": "tsconfig.json",
+        "assets": [
+          "src/assets",
+          "src/favicon.ico"
+        ],
+        "styles": [
+          "src/theme/global.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "builder": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": ":production"
+        },
+        "development": {
+          "buildTarget": ":development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "proxy.conf.json"
+      }
+    },
+    "test": {
+      "builder": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "src/test.ts",
+        "polyfills": "src/polyfills.ts",
+        "tsConfig": "tsconfig.spec.json",
+        "karmaConfig": "karma.conf.json",
+        "assets": [
+          "src/assets"
+        ],
+        "styles": [
+          "src/theme/global.scss"
+        ]
+      }
+    },
+    "lint": {
+      "builder": "@angular-devkit/build-angular:eslint",
+      "options": {
+        "lintConfig": "eslint.config.js"
+      }
+    },
+    "serve": {
+      "builder": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "proxyConfig": "proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": ":production"
+        },
+        "development": {
+          "buildTarget": ":development"
+        }
+      },
+      "defaultConfiguration": "development"
+    }
+  }
+}

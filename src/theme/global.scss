@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --ion-font-family: 'Inter', var(--ion-default-font);
+}
+
+ion-content {
+  --background: var(--ion-color-light);
+}
+
+ion-header {
+  ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: white;
+    --min-height: 56px;
+  }
+}

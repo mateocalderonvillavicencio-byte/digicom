@@ -1,0 +1,9 @@
+npm-cache/
+node_modules/
+dist/
+.angular/
+/.tmp/
+coverage/
+.DS_Store
+*.log
+*.supertest.js
