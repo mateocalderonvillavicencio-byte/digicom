@@ -1,4 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { 
+  IonHeader, 
+  IonToolbar, 
+  IonTitle, 
+  IonContent, 
+  IonList, 
+  IonItem, 
+  IonLabel, 
+  IonThumbnail, 
+  IonIcon, 
+  IonSearchbar,
+  IonRefresher,
+  IonRefresherContent,
+  IonSpinner
+} from '@ionic/angular/standalone';
 import { DataService } from '../services/data.service';
 import { Digimon } from '../interfaces/digimon.interface';
 import { Router } from '@angular/router';
@@ -7,7 +24,24 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-  standalone: false
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonList,
+    IonItem,
+    IonLabel,
+    IonThumbnail,
+    IonIcon,
+    IonSearchbar,
+    IonRefresher,
+    IonRefresherContent,
+    IonSpinner
+  ]
 })
 export class HomePage implements OnInit {
   digimons: Digimon[] = [];
@@ -40,7 +74,7 @@ export class HomePage implements OnInit {
   }
 
   onSearch(event: any): void {
-    const searchTerm = event.target.value.toLowerCase();
+    const searchTerm = event.target.value ? event.target.value.toLowerCase() : '';
     this.filteredDigimons = this.digimons.filter(digimon =>
       digimon.name.toLowerCase().includes(searchTerm)
     );

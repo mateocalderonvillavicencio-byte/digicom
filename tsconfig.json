@@ -18,9 +18,7 @@
     "module": "ES2022",
     "lib": ["ES2022", "dom"],
     "skipLibCheck": true,
-    "paths": {
-      "src/*": ["src/*"]
-    }
+    "types": ["node"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

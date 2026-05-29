@@ -7,17 +7,6 @@ export interface DigimonLevel {
   level: string;
 }
 
-export interface DigimonAttribute {
-  id: number;
-  attribute: string;
-  color: string;
-}
-
-export interface DigimonType {
-  id: number;
-  type: string;
-}
-
 export interface Digimon {
   id: number;
   name: string;

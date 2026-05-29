@@ -13,7 +13,7 @@
     <ion-searchbar
       placeholder="Buscar Digimon..."
       [(ngModel)]="searchTerm"
-      (ionChange)="onSearch($event)"
+      (ionInput)="onSearch($event)"
       animated
       debounce="300">
     </ion-searchbar>
