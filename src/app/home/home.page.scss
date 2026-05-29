@@ -1,0 +1,87 @@
+.search-container {
+  padding: 12px;
+  background: var(--ion-color-light);
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner-large {
+  width: 60px;
+  height: 60px;
+}
+
+ion-searchbar {
+  --border-radius: 16px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --background: var(--ion-card-background);
+}
+
+.digimon-list {
+  padding: 8px;
+}
+
+.digimon-item {
+  --border-radius: 16px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --inner-padding-end: 8px;
+  --background: var(--ion-card-background);
+  margin-bottom: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.digimon-thumbnail {
+  --size: 70px;
+  --border-radius: 12px;
+  margin-inline-end: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.digimon-name {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ion-text-color);
+  margin-bottom: 4px;
+}
+
+.digimon-level {
+  color: var(--ion-color-medium);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.chevron-icon {
+  color: var(--ion-color-medium);
+  font-size: 20px;
+}
+
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+
+  .empty-icon {
+    font-size: 64px;
+    color: var(--ion-color-medium);
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: var(--ion-color-medium);
+    font-size: 16px;
+  }
+}

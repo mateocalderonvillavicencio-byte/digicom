@@ -1,0 +1,27 @@
+# Source
+src/**/*.spec.ts
+src/**/*.test.ts
+src/test.ts
+
+# Build
+dist/
+node_modules/
+.angular/
+/.tmp/
+
+# Coverage
+coverage/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
