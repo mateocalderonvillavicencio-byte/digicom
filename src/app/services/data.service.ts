@@ -7,7 +7,7 @@ import { Digimon, DigimonResponse } from '../interfaces/digimon.interface';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'https://digi-api.com/api/v1/digimon?pageSize=50';
+  private apiUrl = '/api/digimon?pageSize=50';
 
   constructor(private http: HttpClient) {}
 
@@ -22,7 +22,7 @@ export class DataService {
   }
 
   getDigimonById(id: number): Observable<Digimon> {
-    const url = `https://digi-api.com/api/v1/digimon/${id}`;
+    const url = `/api/digimon/${id}`;
     return this.http.get<Digimon>(url).pipe(
       catchError(error => {
         console.error(`Error fetching Digimon with id ${id}:`, error);
