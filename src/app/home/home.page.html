@@ -30,12 +30,12 @@
       (click)="goToDetail(digimon.id)"
       lines="none">
       <ion-thumbnail slot="start" class="digimon-thumbnail">
-        <img [src]="digimon.image?.href" [alt]="digimon.name" />
+        <img [src]="digimon.image" [alt]="digimon.name" />
       </ion-thumbnail>
 
       <ion-label>
         <h2 class="digimon-name">{{ digimon.name }}</h2>
-        <p class="digimon-level">{{ getLevel(digimon) }}</p>
+        <p class="digimon-level">Digimon</p>
       </ion-label>
 
       <ion-icon name="chevron-forward" slot="end" class="chevron-icon"></ion-icon>

@@ -14,11 +14,11 @@
 
   <div *ngIf="!isLoading && digimon" class="detail-content">
     <ion-card class="digimon-card">
-      <img [src]="digimon.image?.href" [alt]="digimon.name" class="digimon-image" />
+      <img [src]="getImageUrl(digimon)" [alt]="digimon.name" class="digimon-image" />
 
       <ion-card-header>
         <ion-card-title class="digimon-title">{{ digimon.name }}</ion-card-title>
-        <ion-card-subtitle class="digimon-subtitle">
+        <ion-card-subtitle class="digimon-subtitle" *ngIf="digimon.levels">
           Nivel: {{ getLevel(digimon) }}
         </ion-card-subtitle>
       </ion-card-header>
@@ -29,9 +29,14 @@
           <span class="info-value">{{ digimon.id }}</span>
         </div>
 
-        <div class="info-row" *ngIf="digimon.levels?.length">
-          <span class="info-label">Niveles:</span>
-          <span class="info-value">{{ getLevel(digimon) }}</span>
+        <div class="info-row" *ngIf="digimon.types?.length">
+          <span class="info-label">Tipo:</span>
+          <span class="info-value">{{ getType(digimon) }}</span>
+        </div>
+
+        <div class="info-row" *ngIf="digimon.attributes?.length">
+          <span class="info-label">Atributo:</span>
+          <span class="info-value">{{ getAttribute(digimon) }}</span>
         </div>
       </ion-card-content>
     </ion-card>

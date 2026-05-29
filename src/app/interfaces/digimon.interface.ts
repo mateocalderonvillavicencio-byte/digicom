@@ -1,5 +1,16 @@
+export interface Digimon {
+  id: number;
+  name: string;
+  href: string;
+  image: string;
+  levels?: DigimonLevel[];
+  types?: DigimonType[];
+  attributes?: DigimonAttribute[];
+}
+
 export interface DigimonImage {
   href: string;
+  transparent: boolean;
 }
 
 export interface DigimonLevel {
@@ -7,11 +18,25 @@ export interface DigimonLevel {
   level: string;
 }
 
-export interface Digimon {
+export interface DigimonType {
   id: number;
-  name: string;
-  image: DigimonImage;
-  levels: DigimonLevel[];
+  type: string;
+}
+
+export interface DigimonAttribute {
+  id: number;
+  attribute: string;
+}
+
+export interface DigimonDetail extends Digimon {
+  images: DigimonImage[];
+  descriptions?: DigimonDescription[];
+}
+
+export interface DigimonDescription {
+  origin: string;
+  language: string;
+  description: string;
 }
 
 export interface DigimonResponse {

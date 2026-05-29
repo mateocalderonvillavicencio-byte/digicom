@@ -63,8 +63,4 @@ export class HomePage implements OnInit {
       }
     });
   }
-
-  getLevel(digimon: Digimon): string {
-    return digimon.levels?.map(l => l.level).join(', ') || 'N/A';
-  }
 }

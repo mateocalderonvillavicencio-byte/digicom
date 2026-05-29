@@ -45,7 +45,22 @@ export class DetailPage implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  getLevel(digimon: Digimon | null): string {
-    return digimon?.levels?.map(l => l.level).join(', ') || 'N/A';
+  getLevel(digimon: Digimon): string {
+    return digimon.levels?.map(l => l.level).join(', ') || '';
+  }
+
+  getType(digimon: Digimon): string {
+    return digimon.types?.map(t => t.type).join(', ') || '';
+  }
+
+  getAttribute(digimon: Digimon): string {
+    return digimon.attributes?.map(a => a.attribute).join(', ') || '';
+  }
+
+  getImageUrl(digimon: Digimon): string {
+    if ('images' in digimon && (digimon as any).images?.length) {
+      return (digimon as any).images[0].href;
+    }
+    return (digimon as any).image || '';
   }
 }
