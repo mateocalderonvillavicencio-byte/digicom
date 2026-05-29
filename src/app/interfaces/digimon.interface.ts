@@ -1,4 +1,6 @@
-import { DigimonImage } from './digimon.interface';
+export interface DigimonImage {
+  href: string;
+}
 
 export interface DigimonLevel {
   id: number;
