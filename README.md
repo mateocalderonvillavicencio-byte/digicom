@@ -15,6 +15,10 @@ Aplicación móvil desarrollada con Ionic Framework y Angular que consume la API
 ## 🚀 Instalación
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/mateocalderonvillavicencio-byte/digicom.git
+cd digicom
+
 # Instalar dependencias
 npm install
 
@@ -27,29 +31,26 @@ npm run start
 ```
 src/
 ├── app/
-│   ├── app.module.ts
-│   ├── app-routing.module.ts
 │   ├── app.component.ts
+│   ├── app.routes.ts
+│   ├── app.module.ts
 │   ├── services/
 │   │   └── data.service.ts
 │   ├── interfaces/
 │   │   └── digimon.interface.ts
 │   ├── home/
-│   │   ├── home.module.ts
-│   │   ├── home-routing.module.ts
 │   │   ├── home.page.ts
 │   │   ├── home.page.html
 │   │   └── home.page.scss
 │   └── detail/
-│       ├── detail.module.ts
-│       ├── detail-routing.module.ts
 │       ├── detail.page.ts
 │       ├── detail.page.html
 │       └── detail.page.scss
 ├── theme/
 │   └── global.scss
 ├── assets/
-└── index.html
+├── index.html
+└── main.ts
 ```
 
 ## 🔧 Comandos
@@ -70,3 +71,10 @@ src/
 ## 📦 API Utilizada
 
 `https://digi-api.com/api/v1/digimon?pageSize=50`
+
+## 🛠️ Tecnologías
+
+- Angular 19 (standalone components)
+- Ionic Angular 8
+- TypeScript 5.5
+- SCSS
