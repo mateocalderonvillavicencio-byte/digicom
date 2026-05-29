@@ -1,21 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { 
-  IonHeader, 
-  IonToolbar, 
-  IonTitle, 
-  IonContent, 
-  IonList, 
-  IonItem, 
-  IonLabel, 
-  IonThumbnail, 
-  IonIcon, 
-  IonSearchbar,
-  IonRefresher,
-  IonRefresherContent,
-  IonSpinner
-} from '@ionic/angular/standalone';
 import { DataService } from '../services/data.service';
 import { Digimon } from '../interfaces/digimon.interface';
 import { Router } from '@angular/router';
@@ -23,25 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonList,
-    IonItem,
-    IonLabel,
-    IonThumbnail,
-    IonIcon,
-    IonSearchbar,
-    IonRefresher,
-    IonRefresherContent,
-    IonSpinner
-  ]
+  styleUrls: ['./home.page.scss']
 })
 export class HomePage implements OnInit {
   digimons: Digimon[] = [];
